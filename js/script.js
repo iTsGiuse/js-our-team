@@ -60,7 +60,7 @@ for (let i=0; i<6; i++){
     const col = document.createElement('div');
     
     /* AGGIUNGI CLASSI */
-    col.classList.add('col-4', 'text-center');
+    col.classList.add('col-4', 'text-center', 'mt-5');
 
     /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
     col.innerHTML += `
@@ -68,7 +68,7 @@ for (let i=0; i<6; i++){
         <div class="card">
             <img src="${persone[i].foto}" alt="Foto">
             <div class="card-title"> 
-                <h3 class="mt-2">${persone[i].nome}</h3>
+                <h3 class="mt-2 mb-2">${persone[i].nome}</h3>
                 <h5>${persone[i].ruolo}</h5>
             </div>
         </div>
