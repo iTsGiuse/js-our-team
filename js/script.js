@@ -48,9 +48,7 @@ const persone = [
 /* SELEZIONA ROW */
 const primaRow = document.getElementById('prima-riga');
 
-/* CREA ELEMENTO */
-const primaCol = document.createElement('div');
-const secondaCol = document.createElement('div');
+
 
 /* STAMPA I PRIMI TRE OGGETTI NELLA PRIMA ROW */
 for (let i=0; i<6; i++){
@@ -58,9 +56,14 @@ for (let i=0; i<6; i++){
     /* MOSTRA IN CONSOLE NOME, RUOLO E FOTO DELLA PERSONA */
     console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
     
-    primaCol.classList.add('col-4')
+    /* CREA ELEMENTO */
+    const col = document.createElement('div');
+    
+    /* AGGIUNGI CLASSI */
+    col.classList.add('col-4', 'text-center');
+
     /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
-    primaCol.innerHTML += `
+    col.innerHTML += `
 
         <div class="card">
             <img src="${persone[i].foto}" alt="Foto">
@@ -71,7 +74,7 @@ for (let i=0; i<6; i++){
         </div>
  
 `;
-}
-/* APPENDI LA PRIMA COL NELLA PRIMA RIGA */
-primaRow.append(primaCol);
 
+/* APPENDI LA PRIMA COL NELLA PRIMA RIGA */
+primaRow.append(col);
+}
