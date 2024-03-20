@@ -47,21 +47,21 @@ const persone = [
 
 /* SELEZIONA ROW */
 const primaRow = document.getElementById('prima-riga');
-const secondaRow = document.getElementById('seconda-riga');
 
 /* CREA ELEMENTO */
 const primaCol = document.createElement('div');
 const secondaCol = document.createElement('div');
 
 /* STAMPA I PRIMI TRE OGGETTI NELLA PRIMA ROW */
-for (let i=0; i<3; i++){
+for (let i=0; i<6; i++){
    
     /* MOSTRA IN CONSOLE NOME, RUOLO E FOTO DELLA PERSONA */
     console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
     
+    primaCol.classList.add('col-4')
     /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
     primaCol.innerHTML += `
-    <div class="col-4 text-center">
+
         <div class="card">
             <img src="${persone[i].foto}" alt="Foto">
             <div class="card-title"> 
@@ -69,33 +69,9 @@ for (let i=0; i<3; i++){
                 <h5>${persone[i].ruolo}</h5>
             </div>
         </div>
-    </div>
+ 
 `;
 }
 /* APPENDI LA PRIMA COL NELLA PRIMA RIGA */
 primaRow.append(primaCol);
 
-/* STAMPA GLI ULTIMI 3 OGGETTI NELLA SECONDA ROW */
-for (let i=3; i<6; i++){
-   
-    /* MOSTRA IN CONSOLE NOME, RUOLO E FOTO DELLA PERSONA */
-    console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
-
-    /* AGGIUNGI LA CLASSI ALLA COL */
-
-    /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
-    secondaCol.innerHTML += `
-    <div class="col-4 text-center">
-        <div class="card">
-            <img src="${persone[i].foto}" alt="Foto">
-            <div class="card-title"> 
-                <h3 class="mt-2">${persone[i].nome}</h3>
-                <h5>${persone[i].ruolo}</h5>
-            </div>
-        </div>
-    </div>
-    `;
-
-}
-/* APPENDI LA SECONDA COL NELLA SECONDA RIGA */
-secondaRow.append(secondaCol);
