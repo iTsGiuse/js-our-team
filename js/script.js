@@ -58,21 +58,19 @@ for (let i=0; i<3; i++){
    
     /* MOSTRA IN CONSOLE NOME, RUOLO E FOTO DELLA PERSONA */
     console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
-
-    /* AGGIUNGI LA CLASSI ALLA COL */
-    primaCol.classList.add('col-4', 'text-center');
     
     /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
     primaCol.innerHTML += `
-    <div class="card">
-        <img src="${persone[i].foto}" alt="Foto">
-        <div class="card-title"> 
-            <h3 class="mt-2">${persone[i].nome}</h3>
-            <h5>${persone[i].ruolo}</h5>
+    <div class="col-4 text-center">
+        <div class="card">
+            <img src="${persone[i].foto}" alt="Foto">
+            <div class="card-title"> 
+                <h3 class="mt-2">${persone[i].nome}</h3>
+                <h5>${persone[i].ruolo}</h5>
+            </div>
         </div>
     </div>
-    `;
-
+`;
 }
 /* APPENDI LA PRIMA COL NELLA PRIMA RIGA */
 primaRow.append(primaCol);
@@ -84,15 +82,16 @@ for (let i=3; i<6; i++){
     console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
 
     /* AGGIUNGI LA CLASSI ALLA COL */
-    secondaCol.classList.add('col-4', 'text-center');
 
     /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
     secondaCol.innerHTML += `
-    <div class="card">
-        <img src="${persone[i].foto}" alt="Foto">
-        <div class="card-title"> 
-            <h3 class="mt-2">${persone[i].nome}</h3>
-            <h5>${persone[i].ruolo}</h5>
+    <div class="col-4 text-center">
+        <div class="card">
+            <img src="${persone[i].foto}" alt="Foto">
+            <div class="card-title"> 
+                <h3 class="mt-2">${persone[i].nome}</h3>
+                <h5>${persone[i].ruolo}</h5>
+            </div>
         </div>
     </div>
     `;
