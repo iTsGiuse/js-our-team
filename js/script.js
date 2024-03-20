@@ -14,8 +14,8 @@ Organizzare i singoli membri in card/schede */
 /* ARRAY DI OGGETTI */
 const persone = [
     {
-        nome: 'Wayne Barnett ',
-        ruolo: 'Founder & CEO ',
+        nome: 'Wayne Barnett',
+        ruolo: 'Founder & CEO',
         foto: 'walter-gordon-office-manager.jpg'
     },
     {
@@ -44,3 +44,10 @@ const persone = [
         foto: 'barbara-ramos-graphic-designer.jpg'
     }
 ];
+
+/* Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto */
+for (let i=0; i<persone.length; i++){
+
+    console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
+
+}
