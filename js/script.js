@@ -16,38 +16,87 @@ const persone = [
     {
         nome: 'Wayne Barnett',
         ruolo: 'Founder & CEO',
-        foto: 'walter-gordon-office-manager.jpg'
+        foto: './img/walter-gordon-office-manager.jpg'
     },
     {
         nome: 'Angela Caroll',
         ruolo: 'Chief Editor',
-        foto: 'angela-caroll-chief-editor.jpg'
+        foto: './img/angela-caroll-chief-editor.jpg'
     },
     {
         nome: 'Walter Gordon',
         ruolo: 'Office Manager',
-        foto: 'wayne-barnett-founder-ceo.jpg'
+        foto: './img/wayne-barnett-founder-ceo.jpg'
     },
     {
         nome: 'Angela Lopez',
         ruolo: 'Social Media Manager',
-        foto: 'angela-lopez-social-media-manager.jpg'
+        foto: './img/angela-lopez-social-media-manager.jpg'
     },
     {
         nome: 'Scott Estrada',
         ruolo: 'Developer' ,
-        foto: 'scott-estrada-developer.jpg'
+        foto: './img/scott-estrada-developer.jpg'
     },
     {
         nome: 'Barbara Ramos',
         ruolo: 'Grapich Designer',
-        foto: 'barbara-ramos-graphic-designer.jpg'
+        foto: './img/barbara-ramos-graphic-designer.jpg'
     }
 ];
 
-/* Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto */
-for (let i=0; i<persone.length; i++){
+/* SELEZIONA ROW */
+const primaRow = document.getElementById('prima-riga');
+const secondaRow = document.getElementById('seconda-riga');
 
+/* CREA ELEMENTO */
+const primaCol = document.createElement('div');
+const secondaCol = document.createElement('div');
+
+/* STAMPA I PRIMI TRE OGGETTI NELLA PRIMA ROW */
+for (let i=0; i<3; i++){
+   
+    /* MOSTRA IN CONSOLE NOME, RUOLO E FOTO DELLA PERSONA */
     console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
 
+    /* AGGIUNGI LA CLASSI ALLA COL */
+    primaCol.classList.add('col-4', 'text-center');
+    
+    /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
+    primaCol.innerHTML += `
+    <div class="card">
+        <img src="${persone[i].foto}" alt="Foto">
+        <div class="card-title"> 
+            <h3 class="mt-2">${persone[i].nome}</h3>
+            <h5>${persone[i].ruolo}</h5>
+        </div>
+    </div>
+    `;
+
 }
+/* APPENDI LA PRIMA COL NELLA PRIMA RIGA */
+primaRow.append(primaCol);
+
+/* STAMPA GLI ULTIMI 3 OGGETTI NELLA SECONDA ROW */
+for (let i=3; i<6; i++){
+   
+    /* MOSTRA IN CONSOLE NOME, RUOLO E FOTO DELLA PERSONA */
+    console.log(persone[i].nome + ' è ' + persone[i].ruolo + '. La sua foto: ' + persone[i].foto);
+
+    /* AGGIUNGI LA CLASSI ALLA COL */
+    secondaCol.classList.add('col-4', 'text-center');
+
+    /* SCRIVI ALL'INTERNO DELLA COL COSA VOGLIO MOSTRARE NEL HTML */
+    secondaCol.innerHTML += `
+    <div class="card">
+        <img src="${persone[i].foto}" alt="Foto">
+        <div class="card-title"> 
+            <h3 class="mt-2">${persone[i].nome}</h3>
+            <h5>${persone[i].ruolo}</h5>
+        </div>
+    </div>
+    `;
+
+}
+/* APPENDI LA SECONDA COL NELLA SECONDA RIGA */
+secondaRow.append(secondaCol);
